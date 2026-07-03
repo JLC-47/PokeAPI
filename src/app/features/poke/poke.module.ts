@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PokeCardComponent } from './components/poke-card/poke-card.component';
+
 import { HttpClientModule } from '@angular/common/http';
+import { PokeCardComponent } from './components/poke-card/poke-card.component';
+import { PokeListComponent } from './pages/poke-list/poke-list.component';
 
 
 
 @NgModule({
   declarations: [
-    PokeCardComponent
+    PokeCardComponent,
+    PokeListComponent
   ],
   imports: [
     CommonModule, HttpClientModule
