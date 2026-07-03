@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Pokemon } from '../../model/poke.model';
 import { PokeService } from '../../services/poke.service';
-import { Observable, of } from 'rxjs';
+import { finalize, Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-poke-list',
@@ -9,7 +9,7 @@ import { Observable, of } from 'rxjs';
   templateUrl: './poke-list.component.html',
   styleUrl: './poke-list.component.scss'
 })
-export class PokeListComponent  implements OnInit{
+export class PokeListComponent implements OnInit {
 
   pokemons$: Observable<Pokemon[]> = of([]);
 
@@ -19,11 +19,65 @@ export class PokeListComponent  implements OnInit{
 
   offset = 0;
 
-  constructor(private pokeService: PokeService) {}
+  loading = true;
+
+  error = false;
+
+  constructor(private pokeService: PokeService) { }
 
   ngOnInit(): void {
-    this.pokemons$ = this.pokeService.getPokemons(this.limit, this.offset);
+    this.loadPokemons();
   }
 
+  loadPokemons(): void {
 
+    this.loading = true;
+
+    this.error = false;
+
+    this.pokeService
+      .getPokemons(this.limit, this.offset)
+      .subscribe({
+
+        next: (pokemons) => {
+
+          this.pokemons$ = of(pokemons);
+
+          this.loading = false;
+
+        },
+
+        error: (error) => {
+
+          console.error(error);
+
+          this.error = true;
+
+          this.loading = false;
+
+        }
+
+      });
+
+  }
+
+  nextPage(): void {
+
+    this.offset += this.limit;
+
+    this.loadPokemons();
+
+  }
+
+  previousPage(): void {
+
+    if (this.offset >= this.limit) {
+
+      this.offset -= this.limit;
+
+      this.loadPokemons();
+
+    }
+
+  }
 }

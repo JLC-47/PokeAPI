@@ -1,228 +1,223 @@
 .card {
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 12px 25px rgba(0,0,0,.25);
-  transition: .3s;
-  color: white;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    color: white;
+
+    box-shadow: 0 12px 20px rgba(0, 0, 0, .25);
+
+    transition: .3s;
+
 }
 
 .card:hover {
-  transform: translateY(-10px) scale(1.03);
+
+    transform: translateY(-10px) scale(1.03);
+
 }
 
 .image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 25px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 25px;
+
 }
 
 .image img {
-  width: 150px;
-  height: 150px;
-  transition: .3s;
+
+    width: 150px;
+
+    height: 150px;
+
+    transition: .3s;
+
 }
 
 .card:hover img {
-  transform: scale(1.15);
+
+    transform: scale(1.15);
+
 }
 
 .content {
-  padding: 20px;
-  text-align: center;
+
+    padding: 20px;
+
+    text-align: center;
+
 }
 
 .content h2 {
-  text-transform: capitalize;
-  margin-bottom: 10px;
-  font-size: 1.7rem;
+
+    text-transform: capitalize;
+
+    margin-bottom: 12px;
+
+    font-size: 1.8rem;
+
 }
 
 .type {
-  display: inline-block;
-  padding: 8px 18px;
-  border-radius: 25px;
-  font-weight: bold;
-  text-transform: capitalize;
-  margin-bottom: 20px;
+
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, .25);
+
+    margin-bottom: 20px;
+
+    font-weight: bold;
+
+    text-transform: capitalize;
+
 }
 
 .stats {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
 }
 
 .stats div {
-  flex: 1;
-  background: rgba(255,255,255,.2);
-  border-radius: 12px;
-  padding: 10px;
+
+    flex: 1;
+
+    background: rgba(255, 255, 255, .2);
+
+    border-radius: 12px;
+
+    padding: 10px;
+
 }
 
 .stats span {
-  display: block;
-  font-size: .8rem;
+
+    display: block;
+
+    font-size: .8rem;
+
 }
 
 .stats strong {
-  font-size: 1.2rem;
+
+    font-size: 1.2rem;
+
 }
 
 .experience {
-  margin-top: 20px;
-  background: rgba(255,255,255,.2);
-  border-radius: 12px;
-  padding: 12px;
+
+    margin-top: 20px;
+
+    background: rgba(255, 255, 255, .2);
+
+    border-radius: 12px;
+
+    padding: 12px;
+
 }
 
 .experience span {
-  display: block;
-  margin-bottom: 5px;
+
+    display: block;
+
+    margin-bottom: 6px;
+
 }
 
-.experience strong {
-  font-size: 1.2rem;
-}
-
-/* ---------- Colores ---------- */
+/* Colores por tipo */
 
 .fire {
-  background: linear-gradient(180deg,#ff9800,#f4511e);
+    background: linear-gradient(#ff9800, #e65100);
 }
 
 .water {
-  background: linear-gradient(180deg,#64b5f6,#1e88e5);
+    background: linear-gradient(#64b5f6, #1565c0);
 }
 
 .grass {
-  background: linear-gradient(180deg,#81c784,#43a047);
+    background: linear-gradient(#81c784, #2e7d32);
 }
 
 .electric {
-  background: linear-gradient(180deg,#fff176,#fbc02d);
-  color: #333;
+    background: linear-gradient(#fff176, #fbc02d);
+    color: #333;
 }
 
 .poison {
-  background: linear-gradient(180deg,#ba68c8,#8e24aa);
+    background: linear-gradient(#ba68c8, #7b1fa2);
 }
 
 .flying {
-  background: linear-gradient(180deg,#90caf9,#5c6bc0);
+    background: linear-gradient(#90caf9, #5c6bc0);
 }
 
 .bug {
-  background: linear-gradient(180deg,#aed581,#689f38);
+    background: linear-gradient(#aed581, #558b2f);
 }
 
 .normal {
-  background: linear-gradient(180deg,#e0e0e0,#9e9e9e);
-  color: #333;
+    background: linear-gradient(#eeeeee, #9e9e9e);
+    color: #333;
 }
 
 .ground {
-  background: linear-gradient(180deg,#d7ccc8,#8d6e63);
+    background: linear-gradient(#d7ccc8, #8d6e63);
 }
 
 .rock {
-  background: linear-gradient(180deg,#bcaaa4,#6d4c41);
+    background: linear-gradient(#bcaaa4, #6d4c41);
 }
 
 .psychic {
-  background: linear-gradient(180deg,#f48fb1,#d81b60);
+    background: linear-gradient(#f48fb1, #d81b60);
 }
 
 .ice {
-  background: linear-gradient(180deg,#b3e5fc,#4fc3f7);
+    background: linear-gradient(#b3e5fc, #039be5);
 }
 
 .dragon {
-  background: linear-gradient(180deg,#7986cb,#3949ab);
+    background: linear-gradient(#7986cb, #3949ab);
 }
 
 .dark {
-  background: linear-gradient(180deg,#616161,#212121);
+    background: linear-gradient(#616161, #212121);
 }
 
 .fairy {
-  background: linear-gradient(180deg,#f8bbd0,#ec407a);
+    background: linear-gradient(#f8bbd0, #ec407a);
 }
 
 .ghost {
-  background: linear-gradient(180deg,#9575cd,#512da8);
+    background: linear-gradient(#9575cd, #512da8);
 }
 
 .fighting {
-  background: linear-gradient(180deg,#bcaaa4,#795548);
+    background: linear-gradient(#bcaaa4, #6d4c41);
 }
 
-/* Badge */
+.id{
 
-.type.fire {
-  background: #d84315;
-}
+    display:block;
 
-.type.water {
-  background: #1565c0;
-}
+    font-size:1rem;
 
-.type.grass {
-  background: #2e7d32;
-}
+    font-weight:bold;
 
-.type.electric {
-  background: #f9a825;
-}
+    margin-bottom:10px;
 
-.type.poison {
-  background: #7b1fa2;
-}
-
-.type.flying {
-  background: #3949ab;
-}
-
-.type.bug {
-  background: #558b2f;
-}
-
-.type.normal {
-  background: #616161;
-}
-
-.type.ground {
-  background: #795548;
-}
-
-.type.rock {
-  background: #5d4037;
-}
-
-.type.psychic {
-  background: #c2185b;
-}
-
-.type.ice {
-  background: #0288d1;
-}
-
-.type.dragon {
-  background: #283593;
-}
-
-.type.dark {
-  background: #000;
-}
-
-.type.fairy {
-  background: #ec407a;
-}
-
-.type.ghost {
-  background: #4527a0;
-}
-
-.type.fighting {
-  background: #6d4c41;
 }

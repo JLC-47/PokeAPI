@@ -1,28 +1,94 @@
 <div class="container">
 
-  <h1 class="title">
-    🏆 Pokédex
-  </h1>
+    <h1 class="title">
 
-  <div class="pokemon-grid">
+        🏆 Pokédex
 
-    <app-poke-card
-      *ngFor="let pokemon of pokemons$ | async"
-      [pokemon]="pokemon">
-    </app-poke-card>
+    </h1>
 
-  </div>
+    <!-- LOADING -->
 
-  <div class="pagination">
+    <div
+        class="loading-container"
+        *ngIf="loading">
 
-    <button class="btn previous">
-      ⬅ Anterior
-    </button>
+        <div class="pokeball">
 
-    <button class="btn next">
-      Siguiente ➜
-    </button>
+            <div class="center-circle"></div>
 
-  </div>
+        </div>
+
+        <h2>Cargando Pokémon...</h2>
+
+    </div>
+
+    <!-- ERROR -->
+
+    <div
+        class="error-container"
+        *ngIf="error">
+
+        <h2>❌ Error al cargar los Pokémon</h2>
+
+        <p>
+
+            Intenta nuevamente.
+
+        </p>
+
+        <button
+            class="retry-btn"
+            (click)="loadPokemons()">
+
+            Reintentar
+
+        </button>
+
+    </div>
+
+    <!-- TARJETAS -->
+
+    <div
+        class="pokemon-grid"
+        *ngIf="!loading && !error">
+
+        <app-poke-card
+            *ngFor="let pokemon of pokemons$ | async"
+            [pokemon]="pokemon">
+
+        </app-poke-card>
+
+    </div>
+
+    <!-- PAGINACIÓN -->
+
+    <div
+        class="pagination"
+        *ngIf="!loading && !error">
+
+        <button
+            class="btn previous"
+            (click)="previousPage()"
+            [disabled]="offset === 0">
+
+            ⬅ Anterior
+
+        </button>
+
+        <span class="page-number">
+
+            Página {{ (offset / limit) + 1 }}
+
+        </span>
+
+        <button
+            class="btn next"
+            (click)="nextPage()">
+
+            Siguiente ➜
+
+        </button>
+
+    </div>
 
 </div>
