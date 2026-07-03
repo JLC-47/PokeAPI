@@ -14,6 +14,8 @@ import { PokeListComponent } from './pages/poke-list/poke-list.component';
   ],
   imports: [
     CommonModule, HttpClientModule
-  ]
+  ],
+
+  exports: [PokeListComponent]
 })
 export class PokeModule { }
