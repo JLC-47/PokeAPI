@@ -1,1 +1,28 @@
-<p>poke-list works!</p>
+<div class="container">
+
+  <h1 class="title">
+    🏆 Pokédex
+  </h1>
+
+  <div class="pokemon-grid">
+
+    <app-poke-card
+      *ngFor="let pokemon of pokemons$ | async"
+      [pokemon]="pokemon">
+    </app-poke-card>
+
+  </div>
+
+  <div class="pagination">
+
+    <button class="btn previous">
+      ⬅ Anterior
+    </button>
+
+    <button class="btn next">
+      Siguiente ➜
+    </button>
+
+  </div>
+
+</div>
